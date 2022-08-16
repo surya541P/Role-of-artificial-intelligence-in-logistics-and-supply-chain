@@ -1,0 +1,133 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Logistics & supply chain</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Main css-->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-grid.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-reboot.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+
+    <!-- Favicons -->
+    <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
+    <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+          rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/remixicon/remixicon.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+
+
+    <style>
+
+        .btn-primary {
+
+            border: 2px solid #fff;
+            color: #fff;
+            background: #00192d;
+        }
+
+        .btn-primary:hover {
+            background: #00192d;
+            border: 2px solid #00192d;
+        }
+
+        .bg-dark {
+            background: #00192d !important;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top bg-dark ">
+    <div class="container d-flex align-items-center justify-content-between">
+
+        <h1 class="logo"><a href="{% url 'AdminHome' %}" style="color: #47a7d7;">Logistics<span
+                class="text-white"></span></a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+        <nav id="navbar" class="navbar">
+            <ul>
+                <li><a class="nav-link scrollto {% block admin_home %}{% endblock %}"
+                       href="{% url 'AdminHome' %}">Home</a></li>
+                <li><a class="nav-link scrollto {% block user_list %}{% endblock %}"
+                       href="{% url 'ViewRegisteredUsers' %}">User List</a></li>
+                <li><a class="nav-link scrollto "
+                    href="{% url 'viewdata' %}">ViewData</a></li>
+
+                <li>
+                    <a class="btn btn-primary p-2 scrollto"
+                       href="{% url 'index' %}">
+                        Logout
+                    </a>
+                </li>
+            </ul>
+            <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav><!-- .navbar -->
+
+    </div>
+</header><!-- End Header -->
+
+<!-- ======= Hero Section ======= -->
+
+
+{% block content %}
+
+{% endblock %}
+<!-- ======= Footer ======= -->
+<footer id="footer" class="text-white" style="background: #00192d;">
+    <br>
+    <div class="text-center">
+        <div class="copyright">
+            &copy; Copyright <strong style="color: #47a7d7;">Logistics<span class="text-white"></span></strong>.
+            All Rights
+            Reserved
+        </div>
+        <div class="credits text-white">
+            Designed by <a href="" class="text-info">Alex Corporation</a>
+        </div>
+    </div>
+    <br><br>
+
+</footer><!-- End Footer -->
+
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+        class="bi bi-arrow-up-short"></i></a>
+
+<!-- Vendor JS Files -->
+<script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+<script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+<script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+<script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+
+<!-- Template Main JS File -->
+<script src="{% static 'assets/js/main.js' %}"></script>
+
+</body>
+
+</html>

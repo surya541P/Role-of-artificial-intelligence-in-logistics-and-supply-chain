@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}User Login{% endblock %}
+{% block user_login %}active{% endblock %}
+
+{% block content %}
+
+
+    <style>
+        body {
+            background: #fff;
+        }
+
+        .jumbotron {
+            font-family: "Book Antiqua";
+            margin-top: 9%;
+            background: #fff;
+
+        }
+
+        .card-body {
+            width: 50%;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+
+        }
+
+    </style>
+    <center>
+        <div class="jumbotron">
+            <div class="container">
+                <div class="card card-body">
+                    <div class="row">
+                        <div class="col-md-12">
+
+                            <form action="{% url 'UserLoginCheck' %}" method="POST" class="text-primary">
+                                {% csrf_token %}
+
+                                <legend style="float: right"> User</legend>
+
+                                <br> <br>
+                                <br>
+
+                                <div class="form-group row">
+                                    <div class="col-md-12">
+                                        <input type="text" class="form-control" name="loginname" required
+                                               placeholder="Enter Login Id">
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="form-group row">
+                                    <div class="col-md-12">
+                                        <input type="password" class="form-control" name="pswd" required
+                                               placeholder="Enter password">
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="form-group row">
+                                    <div class="col-md-12">
+                                        <input type="submit" class="btn btn-block btn-primary text-white" value="Sign in"> &nbsp;
+                                        <input type="reset" class="btn btn-block btn-dark">
+
+                                    </div>
+                                </div>
+
+
+                                <!-- Message -->
+                                {% if messages %}
+                                    {% for message in messages %}
+                                        <p align="center" class="text-primary"> {{ message }}</p>
+                                    {% endfor %}
+                                {% endif %}
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </center>
+{% endblock %}

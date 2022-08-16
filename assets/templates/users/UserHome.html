@@ -1,0 +1,77 @@
+{% extends 'users/userbase.html' %}
+{% block title %}{% endblock %}
+{% block user_home %}active{% endblock %}
+
+{% block content %}
+   <style>
+       h1{
+           margin-top: 10%;
+           margin-left: 25%;
+       }
+       div{
+           margin-left: 2%;
+           margin-right: 2%;
+       }
+    </style>
+    <div>
+    <h1> AutoRegressive Moving Average(ARMA)</h1>
+</br>
+    <p><strong>Autoregressive moving average (ARMA) models play a key role in the modeling of time series. The linear structure of ARMA processes also lead to a substantial simplification of linear prediction. 
+        An ARMA process consists of two models: an autoregressive (AR) model and a moving average (MA) model.
+        Compared with the pure AR and MA models, ARMA models provide the most effective linear model of stationary time series since they are capable of modeling the unknown process with the minimum number of parameters.
+        </strong></p>
+
+    <p><strong> ARMA is essential in studying a time series. It is usually utilized in market research for long-term tracking data research. 
+        For example, it is used in retail research, to analyze sales volume which has seasonal variation characteristics.
+        This model is among the high-resolution spectral analysis methods of the model parameter method, which is used in studying the rational spectrum of the stationary stochastic processes and is suited for a large class of practical problems. 
+        ARMA has a better and more accurate spectral estimation and resolution performance when compared to the AR or MA model, but it has a cumbersome parameter estimation.
+    </strong></p>
+</br>
+    <h2>Fundamental of ARMA model</h2>
+</br>
+    <p><strong>
+        The prediction index forms a data sequence over time that is known as a random sequence. 
+        Their dependence reflects the continuity of the original data in time.
+        On one side there is the influence of influencing factors, and on the other, there is its law of change. 
+        This is while assuming that the influencing factors by regression analysis are x1, x2... xk.
+    </strong></p>
+</br>
+
+    <h2>AR Model</h2>
+</br>
+    <p><strong>AR model is commonly used in current spectrum estimation. 
+        The following is the procedure for using this model.
+    </strong></p>
+
+   <p><strong>
+    1. Selecting the AR model and then equalizing its output to equal the signal being studied if the input is an impulse function or white noise. It should at least be a good approximation of the signal.
+    <p><strong>
+    2. Finding the model's parameters number using the known autocorrelation function or data.
+    <p><strong>
+    3. Using the derived model parameters to estimate the power spectrum of the signal.
+   </strong></p>   
+   
+</br>
+   <h2>MA Model</h2>
+   <p><strong>
+       It is a commonly used model in modern spectrum estimation and is also one of the methods of model parametric spectrum analysis. 
+       The procedure for estimating the MA model's signal spectrum is as follows.
+   </strong></p>
+
+
+   <p><strong>
+    1. Selecting the MA model and then equalizing the output to equal the signal under study in the case where the input is an impulse function or white noise. It should be at least a good approximation of the signal.
+    <p><strong>
+        2. Finding the model's parameters using the known autocorrelation function.
+    <p><strong>
+        3. Estimating the signal's power spectrum using the derived model parameters.
+   </strong></p>
+
+   <p><strong>
+    In the estimation of the ARMA parameter spectrum, the AR parameters are first estimated, and then the MA parameters are estimated based on these AR parameters. The spectral estimates of the ARMA model are then obtained. 
+    The parameter estimation of the MA model is therefore often calculated as a process of ARMA parameter spectrum association.
+    It is used in mechanical parts like gears to form fault diagnosis and analysis since it can process separate sinusoidal signal frequencies.
+   </strong></p>
+</div>
+
+{% endblock %}

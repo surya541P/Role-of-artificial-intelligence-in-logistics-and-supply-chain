@@ -1,0 +1,22 @@
+{% extends 'admins/adminbase.html' %}
+{%load static%} 
+{%block content%}
+<style style="width: 100%;">
+table {
+    margin-top: 10%;
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+    td,th{
+        border: 1px solid #1b1010;
+        text-align: left;
+        padding: 1px
+    }
+
+    tr:nth-child(even){
+        background-color: crayon;
+    }
+</style> 
+<div>{{data|safe}}</div>
+{%endblock%}

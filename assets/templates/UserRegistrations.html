@@ -1,0 +1,136 @@
+{% extends 'base.html' %}
+{% block register %}
+
+{% endblock %}
+
+<style>
+
+
+    .jumbotron {
+        font-family: "Book Antiqua";
+        margin-top: 100px;
+    }
+
+    .card {
+
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        transition: 0.3s;
+    }
+
+    .width {
+        width: 90%;
+    }
+
+</style>
+
+{% block content %}
+
+    <main id="main">
+
+        <!-- ======= Contact Section ======= -->
+        <section id="contact" class="contact">
+            <div class="jumbotron">
+                <div class="container" style="color: white">
+
+                    <center>
+                        <div class="row" data-aos="fade-in">
+
+                            <!--form -->
+
+                            <div class="container width" id="register">
+                                <div class="row card  card-body" style="background: #00192d;">
+                                    <form action="{% url 'UserRegisterActions' %}" method="POST">
+
+
+                                        <div class="section-title">
+                                            <legend class="text-primary">User Sign Up</legend>
+                                            <br>
+                                        </div>
+                                        {% csrf_token %}
+
+                                        <div class="form-row">
+                                            <div class="form-group col-md-4">
+                                                <label for="id_name">User Name</label>
+                                                {{ form.name }}
+                                            </div>
+
+                                            <div class="form-group col-md-4">
+                                                <label for="id_loginid">Login Id</label>
+                                                {{ form.loginid }}
+                                            </div>
+
+
+                                            <div class="form-group col-md-4">
+                                                <label for="id_email">Email</label>
+                                                {{ form.email }}
+                                            </div>
+
+                                            <div class="form-group col-md-4">
+                                                <label for="id_mobile">Mobile</label>
+                                                {{ form.mobile }}
+                                            </div>
+
+
+                                            <div class="form-group col-md-4">
+                                                <label for="id_password">Password</label>
+                                                {{ form.password }}
+                                            </div>
+
+
+                                            <div class="form-group col-md-4">
+                                                <label for="id_locality">Locality</label>
+                                                {{ form.locality }}
+                                            </div>
+
+                                        </div>
+
+                                        <div class="form-row">
+                                            <div class="form-group col-md-4">
+                                                <label for="id_city">City</label>
+                                                {{ form.city }}
+                                            </div>
+
+                                            <div class="form-group col-md-4">
+
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                                <label for="id_state">State</label>
+                                                {{ form.state }}
+                                            </div>
+                                            <div class="form-group col-md-2">
+                                                {#                            <label for="id_status">Status</label>#}
+                                                {{ form.status }}
+                                            </div>
+
+
+                                            <div class="form-group col-md-8">
+                                                <label for="id_address">Address </label>
+                                                {{ form.address }}
+
+                                            </div>
+
+
+                                        </div>
+
+
+                                        <button type="submit" class="btn btn-primary m-2">Sign up</button>
+                                        <button type="reset" class="btn btn-dark m-2">Reset</button>
+                                        <!-- Message -->
+                                        {% if messages %}
+                                            {% for message in messages %}
+                                                <p align="center" class="text-primary"> {{ message }}</p>
+                                            {% endfor %}
+                                        {% endif %}
+
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </center>
+                </div>
+            </div>
+        </section><!-- End Contact Section -->
+
+    </main><!-- End #main -->
+
+{% endblock %}
